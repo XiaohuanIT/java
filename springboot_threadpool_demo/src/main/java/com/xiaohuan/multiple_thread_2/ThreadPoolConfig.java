@@ -13,9 +13,9 @@ import java.util.concurrent.*;
 public class ThreadPoolConfig {
   @Bean(value = "ThreadPool")
   public ExecutorService buildThreadPool() {
-    BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(100);
+    BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(10);
     // 并发创建user status log
-    ThreadPoolExecutor workerPool = new ThreadPoolExecutor(50, 50, 3,
+    ThreadPoolExecutor workerPool = new ThreadPoolExecutor(5, 10, 5,
             TimeUnit.SECONDS, queue, new ThreadPoolExecutor.AbortPolicy());
 
     return workerPool;

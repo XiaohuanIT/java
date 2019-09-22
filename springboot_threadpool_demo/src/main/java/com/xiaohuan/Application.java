@@ -32,16 +32,18 @@ public class Application implements CommandLineRunner {
 
   }
 
+  /*
   @Override
   public void run(String... args) throws Exception {
     for (int i = 0; i < 10; i++) {
       asyncService.executeAsync();
     }
   }
+  */
 
 
 
-  /*
+
   @Override
   public void run(String... args) throws Exception {
     List<String> idList = new ArrayList<>();
@@ -55,9 +57,12 @@ public class Application implements CommandLineRunner {
     idList.add("5");
     idList.add("5");
     idList.add("8");
+    for(int i=0;i<100;i++){
+      idList.add(String.valueOf(i));
+    }
     threadService.threadTest(idList);
   }
-  */
+
 
 
 }
