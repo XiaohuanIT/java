@@ -18,6 +18,10 @@ jar {
                 'Premain-Class': "com.agent.MyCustomAgent"
         )
     }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 group 'com.xiaohuan'
