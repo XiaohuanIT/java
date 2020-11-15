@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+  <bean id="wangwang" class="com.xiaohuan.Dog">
+    <property name="name" value="wangwang"/>
+  </bean>
+
+  <bean id="chenjie" class="com.xiaohuan.User">
+    <property name="username" value="chenjie"/>
+    <property name="password" value="123456"/>
+    <property name="dog">
+      <ref bean="wangwang"/>
+    </property>
+  </bean>
+
+</beans>
