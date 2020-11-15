@@ -1,5 +1,12 @@
-package com.xiaohuan;/**
-* @Author: xiaohuan
-* @Date: 2020/10/30 17:05
-*/public class CustomizebeandefinitionregistrypostprocessorApplication {
+package com.xiaohuan;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CustomizebeandefinitionregistrypostprocessorApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CustomizebeandefinitionregistrypostprocessorApplication.class, args);
+	}
 }

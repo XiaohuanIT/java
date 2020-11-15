@@ -1,5 +1,8 @@
-package com.xiaohuan.service;
+package com.xiaohuan.service.impl;
 
+import com.xiaohuan.service.CalculateService;
+
+// 注意，不要将其声明为spring的bean：
 public class CalculateServiceImpl implements CalculateService {
 
 	private String desc = "desc from class";
