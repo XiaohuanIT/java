@@ -1,5 +1,7 @@
 package com.lock;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

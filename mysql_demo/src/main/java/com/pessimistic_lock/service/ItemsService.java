@@ -6,6 +6,8 @@ import com.pessimistic_lock.entity.Items;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -15,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
+@EnableTransactionManagement
 public class ItemsService {
 	@Autowired
 	private ItemsMapper itemsMapper;
@@ -26,8 +29,11 @@ public class ItemsService {
 		Items item = itemsMapper.findQuantityById(id);
 		if(item.getQuantity()>0){
 			System.out.println(String.format("%d 商品数量为%d",System.currentTimeMillis(),item.getQuantity()));
-			ordersMapper.insertOrders(item);
-			itemsMapper.updateItem(item);
+			int result = itemsMapper.updateItem(item);
+			System.out.println(String.format("result:%d", result));
+			if(result==1) {
+				ordersMapper.insertOrders(item);
+			}
 		}else{
 			System.out.println("商品数量为0了，不能购买!");
 		}
@@ -35,7 +41,7 @@ public class ItemsService {
 	}
 
 
-	@Transactional(rollbackFor = RuntimeException.class)
+	@Transactional(rollbackFor = RuntimeException.class, propagation = Propagation.REQUIRED)
 	public void commonUpdatePessimistic(Integer id) {
 		Items item = itemsMapper.findQuantityByIdWithPessimisticLock(id);
 		if(item.getQuantity()>0){
@@ -47,8 +53,11 @@ public class ItemsService {
 				e.printStackTrace();
 			}
 			*/
-			ordersMapper.insertOrders(item);
-			itemsMapper.updateItem(item);
+
+			int result = itemsMapper.updateItem(item);
+			if(result==1){
+				ordersMapper.insertOrders(item);
+			}
 		}else{
 			log.info("商品数量为0了，不能购买!");
 		}
@@ -60,11 +69,36 @@ public class ItemsService {
 		Items item = itemsMapper.findQuantityById(id);
 		if(item.getQuantity()>0){
 			System.out.println(String.format("%d 商品数量为%d",System.currentTimeMillis(),item.getQuantity()));
-			ordersMapper.insertOrders(item);
-			itemsMapper.updateItemWithOptimisticLock(item, item.getVersion());
+			int result = itemsMapper.updateItemWithOptimisticLock(item, item.getVersion());
+			if(result==1){
+				ordersMapper.insertOrders(item);
+			}
 		}else{
 			System.out.println("商品数量为0了，不能购买!");
 		}
 
+	}
+
+	@Transactional(rollbackFor = RuntimeException.class, propagation = Propagation.REQUIRED)
+	public void commonUpdateOptimisticOther(Integer id){
+		Items item = itemsMapper.findQuantityById(id);
+		if(item.getQuantity()>0){
+			System.out.println(String.format("%d 商品数量为%d",System.currentTimeMillis(),item.getQuantity()));
+			int result = itemsMapper.updateItemWithOptimisticLockOther(item);
+			System.out.println(String.format("result:%d", result));
+			if(result==1) {
+				ordersMapper.insertOrders(item);
+			}
+		}else{
+			System.out.println("商品数量为0了，不能购买!");
+		}
+
+	}
+
+	@Transactional(rollbackFor = RuntimeException.class, propagation = Propagation.REQUIRED)
+	public void transactionTest(Integer id){
+		Items item = itemsMapper.findQuantityById(id);
+		ordersMapper.insertOrders(item);
+		int divide = 1/1;
 	}
 }

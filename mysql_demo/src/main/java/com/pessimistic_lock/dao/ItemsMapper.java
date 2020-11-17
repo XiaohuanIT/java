@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Param;
 public interface ItemsMapper {
 	Items findQuantityById(@Param("id") Integer id);
 	Items findQuantityByIdWithPessimisticLock(@Param("id") Integer id);
-	void updateItem(@Param("item") Items item);
-	void updateItemWithOptimisticLock(@Param("item") Items item, @Param("version")int version);
+	int updateItem(@Param("item") Items item);
+	int updateItemWithOptimisticLock(@Param("item") Items item, @Param("version")int version);
+	int updateItemWithOptimisticLockOther(@Param("item") Items item);
 }

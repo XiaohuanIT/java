@@ -20,4 +20,8 @@
   <update id="updateItemWithOptimisticLock">
     update Items set quantity=quantity-1,version=version+1 where id=#{item.id} and version=#{version};
   </update>
+
+  <update id="updateItemWithOptimisticLockOther">
+    update Items set quantity=quantity-1 where id=#{item.id} and quantity>=1;
+  </update>
 </mapper>

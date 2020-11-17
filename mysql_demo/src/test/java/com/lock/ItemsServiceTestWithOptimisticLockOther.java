@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @Author: xiaohuan
  * @Date: 2020/3/15 21:46
  */
-public class ItemsServiceTestWithOptimisticLock extends BaseTest {
+public class ItemsServiceTestWithOptimisticLockOther extends BaseTest {
 	static int count = 200;
 	static CountDownLatch latch = new CountDownLatch(count);
 
@@ -20,7 +20,7 @@ public class ItemsServiceTestWithOptimisticLock extends BaseTest {
 		@Override
 		public void run() {
 			try {
-				itemsService.commonUpdateOptimistic(100);
+				itemsService.commonUpdateOptimisticOther(100);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

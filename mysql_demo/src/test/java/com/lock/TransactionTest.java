@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @Author: xiaohuan
  * @Date: 2020/3/15 21:46
  */
-public class ItemsServiceTestWithPessimisticLock extends BaseTest {
+public class TransactionTest extends BaseTest {
 	static int count = 200;
 	static CountDownLatch latch = new CountDownLatch(count);
 
@@ -20,7 +20,7 @@ public class ItemsServiceTestWithPessimisticLock extends BaseTest {
 		@Override
 		public void run() {
 			try {
-				itemsService.commonUpdatePessimistic(100);
+				itemsService.transactionTest(100);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
