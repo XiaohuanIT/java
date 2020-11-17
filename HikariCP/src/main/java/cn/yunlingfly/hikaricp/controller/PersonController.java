@@ -21,7 +21,7 @@ public class PersonController {
 
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public List<Person> getAll(){
-        List<Person> list=iPersonService.listAll();
+        List<Person> list =iPersonService.listAll();
         System.out.println("选出所有的人："+JSON.toJSONString(list));
         return list;
     }
