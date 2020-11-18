@@ -1,4 +1,6 @@
-import demo1.Dog;
+package demo2;
+
+
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -8,14 +10,18 @@ import java.lang.reflect.Method;
  * @Date: 2019-12-21 15:32
  */
 public class Demo2 {
+  /*
   public static void main(String[] args) {
     testFields();
   }
 
   public static void testFields() {
-    Dog dog = new Dog();
-    dog.setAge(1);
-    dog.getClass().getDeclaredField()
+    Student student = new Student();
+    try {
+      student.getClass().getDeclaredField("studentName");
+    } catch (NoSuchFieldException e) {
+      e.printStackTrace();
+    }
 
     System.out.println("Declared fields: ");
     Field[] fields = Dog.class.getDeclaredFields();
@@ -34,5 +40,6 @@ public class Demo2 {
     Object value = method.invoke(dog);
     System.out.println(value); // 此处结果是1
 
-  }
+
+  } */
 }
