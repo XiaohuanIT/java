@@ -12,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    //implementation group: 'com.alipay.sofa', name: 'sofaboot-dependencies', version: '3.3.4', ext: 'pom'
+    //compile 'com.alipay.sofa:sofa-rpc-all:5.6.3'
+    compile 'org.projectlombok:lombok:1.16.8'
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.2.RELEASE'
     compile 'org.springframework.boot:spring-boot-test:2.1.2.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
