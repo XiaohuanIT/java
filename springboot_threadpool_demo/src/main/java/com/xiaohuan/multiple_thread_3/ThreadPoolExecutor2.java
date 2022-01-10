@@ -26,17 +26,30 @@ public class ThreadPoolExecutor2 {
     }
   }
 
-  public static void main(String[] args) {
-    ThreadPoolExecutor executor=new ThreadPoolExecutor(1, 2, 30, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable> (2), new ThreadPoolExecutor.CallerRunsPolicy());
+  public static void main(String[] args) throws InterruptedException {
+    ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 2, 30, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(2), new ThreadPoolExecutor.CallerRunsPolicy());
 
 
     for (int i = 1; i <= 6; i++) {
-      System.out.println("添加第"+i+"个任务");
-      executor.execute(new MyThread("线程"+i));
+      System.out.println("添加第" + i + "个任务");
+      executor.execute(new MyThread("线程" + i));
       Iterator iterator = executor.getQueue().iterator();
-      while (iterator.hasNext()){
+      while (iterator.hasNext()) {
         MyThread thread = (MyThread) iterator.next();
-        System.out.println("列表："+thread.name);
+        System.out.println("列表：" + thread.name);
+      }
+    }
+
+
+    Thread.sleep(1000 * 35);
+
+    for (int i = 1; i <= 6; i++) {
+      System.out.println("添加第" + i + "个任务");
+      executor.execute(new MyThread("线程" + i));
+      Iterator iterator = executor.getQueue().iterator();
+      while (iterator.hasNext()) {
+        MyThread thread = (MyThread) iterator.next();
+        System.out.println("列表：" + thread.name);
       }
     }
     executor.shutdown();
