@@ -413,3 +413,8 @@ Semaphore主要用于控制当前活动线程数目，就如同停车场系统�
 
 #### 主线程等待子线程解决方案
 另外，在test目录下有 [README.md](./src/test/README.md) 介绍主线程等待子线程解决方案。
+
+
+
+#### Guava中的ThreadFactoryBuilder 设置线程名字
+主要就是给线程整一个名字，用jstack等工具排查问题时方便知道是哪个线程池里的。
