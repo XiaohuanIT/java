@@ -1,10 +1,10 @@
-## SPI¸ÅÊö
+## SPIæ¦‚è¿°
 
-SPIÈ«³ÆÎª(Service Provider Interface) £¬ÊÇJDKÄÚÖÃµÄÒ»ÖÖ·şÎñÌá¹©·¢ÏÖ»úÖÆ£»Ö÷Òª±»¿ò¼ÜµÄ¿ª·¢ÈËÔ±Ê¹ÓÃ£¬±ÈÈçjava.sql.Driver½Ó¿Ú£¬Êı¾İ¿â³§ÉÌÊµÏÖ´Ë½Ó¿Ú¼´¿É£¬µ±È»ÒªÏëÈÃÏµÍ³ÖªµÀ¾ßÌåÊµÏÖÀàµÄ´æÔÚ£¬»¹ĞèÒªÊ¹ÓÃ¹Ì¶¨µÄ´æ·Å¹æÔò£¬ĞèÒªÔÚclasspathÏÂµÄMETA-INF/services/Ä¿Â¼Àï´´½¨Ò»¸öÒÔ·şÎñ½Ó¿ÚÃüÃûµÄÎÄ¼ş£¬Õâ¸öÎÄ¼şÀïµÄÄÚÈİ¾ÍÊÇÕâ¸ö½Ó¿ÚµÄ¾ßÌåµÄÊµÏÖÀà£»ÏÂÃæÒÔJDBCÎªÊµÀıÀ´½øĞĞ¾ßÌåµÄ·ÖÎö¡£
+SPIå…¨ç§°ä¸º(Service Provider Interface) ï¼Œæ˜¯JDKå†…ç½®çš„ä¸€ç§æœåŠ¡æä¾›å‘ç°æœºåˆ¶ï¼›ä¸»è¦è¢«æ¡†æ¶çš„å¼€å‘äººå‘˜ä½¿ç”¨ï¼Œæ¯”å¦‚java.sql.Driveræ¥å£ï¼Œæ•°æ®åº“å‚å•†å®ç°æ­¤æ¥å£å³å¯ï¼Œå½“ç„¶è¦æƒ³è®©ç³»ç»ŸçŸ¥é“å…·ä½“å®ç°ç±»çš„å­˜åœ¨ï¼Œè¿˜éœ€è¦ä½¿ç”¨å›ºå®šçš„å­˜æ”¾è§„åˆ™ï¼Œéœ€è¦åœ¨classpathä¸‹çš„META-INF/services/ç›®å½•é‡Œåˆ›å»ºä¸€ä¸ªä»¥æœåŠ¡æ¥å£å‘½åçš„æ–‡ä»¶ï¼Œè¿™ä¸ªæ–‡ä»¶é‡Œçš„å†…å®¹å°±æ˜¯è¿™ä¸ªæ¥å£çš„å…·ä½“çš„å®ç°ç±»ï¼›ä¸‹é¢ä»¥JDBCä¸ºå®ä¾‹æ¥è¿›è¡Œå…·ä½“çš„åˆ†æã€‚
 
-## JDBCÇı¶¯
+## JDBCé©±åŠ¨
 
-### 1.×¼±¸Çı¶¯°ü
+### 1.å‡†å¤‡é©±åŠ¨åŒ…
 
 ```
 <dependency>
@@ -24,16 +24,16 @@ SPIÈ«³ÆÎª(Service Provider Interface) £¬ÊÇJDKÄÚÖÃµÄÒ»ÖÖ·şÎñÌá¹©·¢ÏÖ»úÖÆ£»Ö÷Òª±»¿
         </dependency>
 ```
 
-·Ö±ğ×¼±¸ÁËmysql£¬postgresqlºÍsqlserver£¬¿ÉÒÔ´ò¿ªjar£¬·¢ÏÖÃ¿¸öjar°üµÄMETA-INF/services/¶¼´æÔÚÒ»¸öjava.sql.DriverÎÄ¼ş£¬ÎÄ¼şÀïÃæ´æÔÚÒ»¸ö»ò¶à¸öÀàÃû£¬±ÈÈçmysql£º
+åˆ†åˆ«å‡†å¤‡äº†mysqlï¼Œpostgresqlå’Œsqlserverï¼Œå¯ä»¥æ‰“å¼€jarï¼Œå‘ç°æ¯ä¸ªjaråŒ…çš„META-INF/services/éƒ½å­˜åœ¨ä¸€ä¸ªjava.sql.Driveræ–‡ä»¶ï¼Œæ–‡ä»¶é‡Œé¢å­˜åœ¨ä¸€ä¸ªæˆ–å¤šä¸ªç±»åï¼Œæ¯”å¦‚mysqlï¼š
 
 ```
 com.mysql.jdbc.Driver
 com.mysql.fabric.jdbc.FabricMySQLDriver
 ```
 
-Ìá¹©µÄÃ¿¸öÇı¶¯ÀàÕ¼¾İÒ»ĞĞ£¬½âÎöµÄÊ±ºò»á°´ĞĞ¶ÁÈ¡£¬¾ßÌåÊ¹ÓÃÄÄ¸ö»á¸ù¾İurlÀ´¾ö¶¨£»
+æä¾›çš„æ¯ä¸ªé©±åŠ¨ç±»å æ®ä¸€è¡Œï¼Œè§£æçš„æ—¶å€™ä¼šæŒ‰è¡Œè¯»å–ï¼Œå…·ä½“ä½¿ç”¨å“ªä¸ªä¼šæ ¹æ®urlæ¥å†³å®šï¼›
 
-### 2.¼òµ¥ÊµÀı
+### 2.ç®€å•å®ä¾‹
 
 ```
 String url = "jdbc:mysql://localhost:3306/db3";
@@ -43,29 +43,73 @@ String sql = "update travelrecord set name=\'bbb\' where id=1";
 Connection con = DriverManager.getConnection(url, username, password);
 ```
 
-ÀàÂ·¾¶ÏÂ´æÔÚ¶à¸öÇı¶¯°ü£¬¾ßÌåÔÚÊ¹ÓÃDriverManager.getConnectionÓ¦¸ÃÊ¹ÓÃÄÄ¸öÇı¶¯Àà»á½âÎöurlÀ´Ê¶±ğ£¬²»Í¬µÄÊı¾İ¿âÓĞ²»Í¬µÄurlÇ°×º£»
+ç±»è·¯å¾„ä¸‹å­˜åœ¨å¤šä¸ªé©±åŠ¨åŒ…ï¼Œå…·ä½“åœ¨ä½¿ç”¨DriverManager.getConnectionåº”è¯¥ä½¿ç”¨å“ªä¸ªé©±åŠ¨ç±»ä¼šè§£æurlæ¥è¯†åˆ«ï¼Œä¸åŒçš„æ•°æ®åº“æœ‰ä¸åŒçš„urlå‰ç¼€ï¼›
 
-### 3.Çı¶¯Àà¼ÓÔØ·ÖÎö
+### 3.é©±åŠ¨ç±»åŠ è½½åˆ†æ
 
-¾ßÌåMETA-INF/services/ÏÂµÄÇı¶¯ÀàÊÇÊ²Ã´Ê±ºò¼ÓÔØµÄ£¬DriverManagerÓĞÒ»¸ö¾²Ì¬´úÂë¿é£º
+
 
 ```
+ /*
+ *å…¥å£, è·å–ä¸€ä¸‹å½“å‰ç±»çš„ç±»åŠ è½½å™¨,ç„¶åè°ƒç”¨ä¸‹ä¸€ä¸ªé™æ€æ–¹æ³•
+ */
+ public static <S> ServiceLoader<S> load(Class<S> service) {
+     ClassLoader cl = Thread.currentThread().getContextClassLoader();
+     return ServiceLoader.load(service, cl);
+ }
+ /*
+ *è¿™ä¸ªä¹Ÿæ²¡æœ‰ä»€ä¹ˆé€»è¾‘,ç›´æ¥è°ƒç”¨æ„é€ æ–¹æ³•
+ */
+ public static <S> ServiceLoader<S> load(Class<S> service, ClassLoader loader)
+ {
+     return new ServiceLoader<>(service, loader);
+ }
+ /**
+ * ä¹Ÿæ²¡æœ‰ä»€ä¹ˆé€»è¾‘,ç›´æ¥è°ƒç”¨reload
+ */
+ private ServiceLoader(Class<S> svc, ClassLoader cl) {
+     service = Objects.requireNonNull(svc, "Service interface cannot be null");
+     loader = (cl == null) ? ClassLoader.getSystemClassLoader() : cl;
+     acc = (System.getSecurityManager() != null) ? AccessController.getContext() : null;
+     reload();
+ }
+ /**
+ * ç›´æ¥å®ä¾‹åŒ–ä¸€ä¸ªæ‡’åŠ è½½çš„è¿­ä»£å™¨
+ */
+ public void reload() {
+     providers.clear();
+     lookupIterator = new LazyIterator(service, loader);
+ }
+```
+
+
+
+
+
+å…·ä½“META-INF/services/ä¸‹çš„é©±åŠ¨ç±»æ˜¯ä»€ä¹ˆæ—¶å€™åŠ è½½çš„ï¼ŒDriverManageræœ‰ä¸€ä¸ªé™æ€ä»£ç å—ï¼š
+
+```
+// å½“è°ƒç”¨DriverManager.getConnection(..)æ—¶ï¼Œstaticä¼šåœ¨getConnection(..)æ‰§è¡Œä¹‹å‰è¢«è§¦å‘æ‰§è¡Œ
 static {
     loadInitialDrivers();
     println("JDBC DriverManager initialized");
 }
- 
+
+// loadInitialDrivers()ä¸­å®Œæˆäº†å¼•å…¥çš„æ•°æ®åº“é©±åŠ¨çš„æŸ¥æ‰¾ä»¥åŠè½½å…¥ï¼Œæœ¬ç¤ºä¾‹åªå¼•å…¥äº†oracleå‚å•†çš„mysqlï¼Œæˆ‘ä»¬å…·ä½“çœ‹çœ‹ã€‚
 private static void loadInitialDrivers() {
     String drivers;
     try {
         drivers = AccessController.doPrivileged(new PrivilegedAction<String>() {
             public String run() {
+                // ä½¿ç”¨ç³»ç»Ÿå˜é‡æ–¹å¼åŠ è½½
                 return System.getProperty("jdbc.drivers");
             }
         });
     } catch (Exception ex) {
         drivers = null;
     }
+    
+    // å¦‚æœspi å­˜åœ¨å°†ä½¿ç”¨spiæ–¹å¼å®Œæˆæä¾›çš„Driverçš„åŠ è½½
     // If the driver is packaged as a Service Provider, load it.
     // Get all the drivers through the classloader
     // exposed as a java.sql.Driver.class service.
@@ -74,6 +118,7 @@ private static void loadInitialDrivers() {
     AccessController.doPrivileged(new PrivilegedAction<Void>() {
         public Void run() {
  
+            // æŸ¥æ‰¾å…·ä½“çš„provider,å°±æ˜¯åœ¨META-INF/services/***.Driveræ–‡ä»¶ä¸­æŸ¥æ‰¾å…·ä½“çš„å®ç°ã€‚
             ServiceLoader<Driver> loadedDrivers = ServiceLoader.load(Driver.class);
             Iterator<Driver> driversIterator = loadedDrivers.iterator();
  
@@ -89,9 +134,10 @@ private static void loadInitialDrivers() {
              * if driver not available in classpath but it's
              * packaged as service and that service is there in classpath.
              */
+            // æŸ¥æ‰¾å…·ä½“çš„å®ç°ç±»çš„å…¨é™å®šåç§°
             try{
                 while(driversIterator.hasNext()) {
-                    driversIterator.next();
+                    driversIterator.next(); // åŠ è½½å¹¶åˆå§‹åŒ–å®ç°ç±»
                 }
             } catch(Throwable t) {
             // Do nothing
@@ -119,9 +165,29 @@ private static void loadInitialDrivers() {
 }
 ```
 
-ÔÚ¼ÓÔØDriverManagerÀàµÄÊ±ºò»áÖ´ĞĞloadInitialDrivers·½·¨£¬·½·¨ÄÚÍ¨¹ıÁËÁ½ÖÖ¼ÓÔØÇı¶¯ÀàµÄ·½Ê½£¬·Ö±ğÊÇ£ºÊ¹ÓÃÏµÍ³±äÁ¿·½Ê½ºÍServiceLoader¼ÓÔØ·½Ê½£»ÏµÍ³±äÁ¿·½Ê½ÆäÊµ¾ÍÊÇÔÚ±äÁ¿jdbc.driversÖĞÅäÖÃºÃÇı¶¯Àà£¬È»ºóÊ¹ÓÃClass.forName½øĞĞ¼ÓÔØ£»ÏÂÃæÖØµã¿´Ò»ÏÂServiceLoader·½Ê½£¬´Ë´¦µ÷ÓÃÁËload·½·¨µ«ÊÇ²¢Ã»ÓĞÕæÕıÈ¥¼ÓÔØÇı¶¯Àà£¬¶øÊÇ·µ»ØÁËÒ»¸öLazyIterator£¬ºóÃæµÄ´úÂë¾ÍÊÇÑ­»·±äÁ¿µü´úÆ÷£º
+åœ¨åŠ è½½DriverManagerç±»çš„æ—¶å€™ä¼šæ‰§è¡ŒloadInitialDriversæ–¹æ³•ï¼Œæ–¹æ³•å†…é€šè¿‡äº†ä¸¤ç§åŠ è½½é©±åŠ¨ç±»çš„æ–¹å¼ï¼Œåˆ†åˆ«æ˜¯ï¼šä½¿ç”¨ç³»ç»Ÿå˜é‡æ–¹å¼å’ŒServiceLoaderåŠ è½½æ–¹å¼ï¼›ç³»ç»Ÿå˜é‡æ–¹å¼å…¶å®å°±æ˜¯åœ¨å˜é‡jdbc.driversä¸­é…ç½®å¥½é©±åŠ¨ç±»ï¼Œç„¶åä½¿ç”¨Class.forNameè¿›è¡ŒåŠ è½½ï¼›ä¸‹é¢é‡ç‚¹çœ‹ä¸€ä¸‹ServiceLoaderæ–¹å¼ï¼Œæ­¤å¤„è°ƒç”¨äº†loadæ–¹æ³•ä½†æ˜¯å¹¶æ²¡æœ‰çœŸæ­£å»åŠ è½½é©±åŠ¨ç±»ï¼Œè€Œæ˜¯è¿”å›äº†ä¸€ä¸ªLazyIteratorï¼Œåé¢çš„ä»£ç å°±æ˜¯å¾ªç¯å˜é‡è¿­ä»£å™¨ï¼š
+
+
 
 ```
+public boolean hasNext() {
+    if (acc == null) {
+        return hasNextService();
+    } else {
+        PrivilegedAction<Boolean> action = new PrivilegedAction<Boolean>() {
+            public Boolean run() { return hasNextService(); }
+        };
+        return AccessController.doPrivileged(action, acc);
+    }
+}
+```
+
+
+
+
+
+```
+//å†™æ­»çš„ä¸€ä¸ªç›®å½•
 private static final String PREFIX = "META-INF/services/";
  
 private class LazyIterator
@@ -146,6 +212,7 @@ private class LazyIterator
             if (configs == null) {
                 try {
                     String fullName = PREFIX + service.getName();
+                    //é€šè¿‡ç›¸å¯¹è·¯å¾„è¯»å–classpathä¸­META-INFç›®å½•çš„æ–‡ä»¶ï¼Œä¹Ÿå°±æ˜¯è¯»å–æœåŠ¡æä¾›è€…çš„å®ç°ç±»å…¨é™å®šå
                     if (loader == null)
                         configs = ClassLoader.getSystemResources(fullName);
                     else
@@ -154,6 +221,7 @@ private class LazyIterator
                     fail(service, "Error locating configuration files", x);
                 }
             }
+            //åˆ¤æ–­æ˜¯å¦è¯»å–åˆ°å®ç°ç±»å…¨é™å®šå,æ¯”å¦‚mysqlçš„â€œcom.mysql.jdbc.Driver
             while ((pending == null) || !pending.hasNext()) {
                 if (!configs.hasMoreElements()) {
                     return false;
@@ -161,16 +229,28 @@ private class LazyIterator
                 pending = parse(service, configs.nextElement());
             }
             nextName = pending.next();
-            return true;
+            return true;//æŸ¥åˆ°äº† è¿”å›trueï¼Œæ¥ç€è°ƒç”¨next()
+        }
+        
+        public S next() {
+            if (acc == null) { //ç”¨æ¥åˆ¤æ–­serviceLoaderå¯¹è±¡æ˜¯å¦å®Œæˆåˆå§‹åŒ–
+                return nextService();
+            } else {
+                PrivilegedAction<S> action = new PrivilegedAction<S>() {
+                    public S run() { return nextService(); }
+                };
+                return AccessController.doPrivileged(action, acc);
+            }
         }
  
         private S nextService() {
             if (!hasNextService())
                 throw new NoSuchElementException();
-            String cn = nextName;
+            String cn = nextName;//ä¸Šä¸€æ­¥æ‰¾åˆ°çš„æœåŠ¡å®ç°è€…å…¨é™å®šå
             nextName = null;
             Class<?> c = null;
             try {
+                //åŠ è½½å­—èŠ‚ç è¿”å›classå¯¹è±¡.ä½†å¹¶ä¸å»åˆå§‹åŒ–ï¼ˆæ¢å¥è¯å°±æ˜¯è¯´ä¸å»æ‰§è¡Œè¿™ä¸ªç±»ä¸­çš„staticå—ä¸staticå˜é‡åˆå§‹åŒ–ï¼‰
                 c = Class.forName(cn, false, loader);
             } catch (ClassNotFoundException x) {
                 fail(service,
@@ -181,6 +261,7 @@ private class LazyIterator
                      "Provider " + cn  + " not a subtype");
             }
             try {
+                //åˆå§‹åŒ–è¿™ä¸ªå®ç°ç±».å°†ä¼šé€šè¿‡staticå—çš„æ–¹å¼è§¦å‘å®ç°ç±»æ³¨å†Œåˆ°DriverManager(å…¶ä¸­ç»„åˆäº†ä¸€ä¸ªCopyOnWriteArrayListçš„registeredDriversæˆå‘˜å˜é‡)ä¸­
                 S p = service.cast(c.newInstance());
                 providers.put(cn, p);
                 return p;
@@ -195,7 +276,7 @@ private class LazyIterator
     }
 ```
 
-ÀàÖĞÖ¸¶¨ÁËÒ»¸ö¾²Ì¬³£Á¿PREFIX = ¡°META-INF/services/¡±£¬È»ºóºÍjava.sql.DriverÆ´½Ó×é³ÉÁËfullName£¬È»ºóÍ¨¹ıÀà¼ÓÔØÆ÷È¥»ñÈ¡ËùÓĞÀàÂ·¾¶ÏÂjava.sql.DriverÎÄ¼ş£¬»ñÈ¡Ö®ºó´æ·ÅÔÚconfigsÖĞ£¬ÀïÃæµÄÃ¿¸öÔªËØ¶ÔÓ¦Ò»¸öÎÄ¼ş£¬Ã¿¸öÎÄ¼şÖĞ¿ÉÄÜ»á´æÔÚ¶à¸öÇı¶¯Àà£¬ËùÒÔÊ¹ÓÃpendingÓÃÀ´´æ·ÅÃ¿¸öÎÄ¼şÖĞµÄÇı¶¯ĞÅÏ¢£¬»ñÈ¡Çı¶¯ĞÅÏ¢Ö®ºóÔÚnextServiceÖĞÊ¹ÓÃClass.forName¼ÓÔØÀàĞÅÏ¢£¬²¢ÇÒÖ¸¶¨²»½øĞĞ³õÊ¼»¯£»Í¬Ê±ÔÚÏÂÃæÊ¹ÓÃnewInstance¶ÔÇı¶¯Àà½øĞĞÁËÊµÀı»¯²Ù×÷£»Ã¿¸öÇı¶¯ÀàÖĞ¶¼Ìá¹©ÁËÒ»¸ö¾²Ì¬×¢²á´úÂë¿é£¬±ÈÈçmysql£º
+ç±»ä¸­æŒ‡å®šäº†ä¸€ä¸ªé™æ€å¸¸é‡PREFIX = â€œMETA-INF/services/â€ï¼Œç„¶åå’Œjava.sql.Driveræ‹¼æ¥ç»„æˆäº†fullNameï¼Œç„¶åé€šè¿‡ç±»åŠ è½½å™¨å»è·å–æ‰€æœ‰ç±»è·¯å¾„ä¸‹java.sql.Driveræ–‡ä»¶ï¼Œè·å–ä¹‹åå­˜æ”¾åœ¨configsä¸­ï¼Œé‡Œé¢çš„æ¯ä¸ªå…ƒç´ å¯¹åº”ä¸€ä¸ªæ–‡ä»¶ï¼Œæ¯ä¸ªæ–‡ä»¶ä¸­å¯èƒ½ä¼šå­˜åœ¨å¤šä¸ªé©±åŠ¨ç±»ï¼Œæ‰€ä»¥ä½¿ç”¨pendingç”¨æ¥å­˜æ”¾æ¯ä¸ªæ–‡ä»¶ä¸­çš„é©±åŠ¨ä¿¡æ¯ï¼Œè·å–é©±åŠ¨ä¿¡æ¯ä¹‹ååœ¨nextServiceä¸­ä½¿ç”¨Class.forNameåŠ è½½ç±»ä¿¡æ¯ï¼Œå¹¶ä¸”æŒ‡å®šä¸è¿›è¡Œåˆå§‹åŒ–ï¼›åŒæ—¶åœ¨ä¸‹é¢ä½¿ç”¨newInstanceå¯¹é©±åŠ¨ç±»è¿›è¡Œäº†å®ä¾‹åŒ–æ“ä½œï¼›æ¯ä¸ªé©±åŠ¨ç±»ä¸­éƒ½æä¾›äº†ä¸€ä¸ªé™æ€æ³¨å†Œä»£ç å—ï¼Œæ¯”å¦‚mysqlï¼š
 
 ```
 static {
@@ -207,7 +288,33 @@ static {
 }
 ```
 
-ÕâÀïÓÖÊµÀı»¯ÁËÒ»¸öÇı¶¯Àà£¬Í¬Ê±×¢²áµ½DriverManager£»½ÓÏÂÀ´¾ÍÊÇµ÷ÓÃDriverManagerµÄgetConnection·½·¨£¬´úÂëÈçÏÂ£º
+
+
+ä¸Šä¸€æ­¥ä¸­ï¼ŒSp = service.cast(c.newInstance()) å°†ä¼šå¯¼è‡´å…·ä½“å®ç°è€…çš„åˆå§‹åŒ–ï¼Œæ¯”å¦‚mysqlJDBCï¼Œä¼šè§¦å‘å¦‚ä¸‹ä»£ç ï¼š
+
+>Class.cast(Object obj)æ–¹æ³• å°±æ˜¯ä½œç”¨å°±æ˜¯å¼ºåˆ¶ç±»å‹è½¬æ¢
+
+```
+//com.mysql.jdbc.Driver.java
+......
+    private final static CopyOnWriteArrayList<DriverInfo> registeredDrivers = new CopyOnWriteArrayList<>();
+......
+
+    static {
+        try {
+		        //å¹¶å‘å®‰å…¨çš„æƒ³ä¸€ä¸ªcopyOnWriteListä¸­æ–¹
+            java.sql.DriverManager.registerDriver(new Driver());
+        } catch (SQLException E) {
+            throw new RuntimeException("Can't register driver!");
+        }
+    }
+```
+
+
+
+
+
+è¿™é‡Œåˆå®ä¾‹åŒ–äº†ä¸€ä¸ªé©±åŠ¨ç±»ï¼ŒåŒæ—¶æ³¨å†Œåˆ°DriverManagerï¼›æ¥ä¸‹æ¥å°±æ˜¯è°ƒç”¨DriverManagerçš„getConnectionæ–¹æ³•ï¼Œä»£ç å¦‚ä¸‹ï¼š
 
 ```
 private static Connection getConnection(
@@ -271,21 +378,21 @@ private static Connection getConnection(
    }
 ```
 
-´Ë·½·¨Ö÷ÒªÊÇ±éÀúÖ®Ç°×¢²áµÄDriverInfo£¬ÄÃ×ÅurlĞÅÏ¢È¥Ã¿¸öÇı¶¯ÀàÖĞ½¨Á¢Á¬½Ó£¬µ±È»Ã¿¸öÇı¶¯ÀàÖĞ¶¼»á½øĞĞurlÆ¥ÅäĞ£Ñé£¬³É¹¦Ö®ºó·µ»ØConnection£¬Èç¹ûÖĞÍ¾ÓĞÊ§°ÜµÄÁ¬½Ó²¢²»Ó°Ïì³¢ÊÔĞÂµÄÇı¶¯Á¬½Ó£¬±éÀúÍêÖ®ºó»¹ÊÇÎŞ·¨»ñÈ¡Á¬½Ó£¬ÔòÅ×³öÒì³££»
+æ­¤æ–¹æ³•ä¸»è¦æ˜¯éå†ä¹‹å‰æ³¨å†Œçš„DriverInfoï¼Œæ‹¿ç€urlä¿¡æ¯å»æ¯ä¸ªé©±åŠ¨ç±»ä¸­å»ºç«‹è¿æ¥ï¼Œå½“ç„¶æ¯ä¸ªé©±åŠ¨ç±»ä¸­éƒ½ä¼šè¿›è¡ŒurlåŒ¹é…æ ¡éªŒï¼ŒæˆåŠŸä¹‹åè¿”å›Connectionï¼Œå¦‚æœä¸­é€”æœ‰å¤±è´¥çš„è¿æ¥å¹¶ä¸å½±å“å°è¯•æ–°çš„é©±åŠ¨è¿æ¥ï¼Œéå†å®Œä¹‹åè¿˜æ˜¯æ— æ³•è·å–è¿æ¥ï¼Œåˆ™æŠ›å‡ºå¼‚å¸¸ï¼›
 
-### 4.À©Õ¹
+### 4.æ‰©å±•
 
-Èç¹ûÏëÀ©Õ¹ĞÂµÄÇı¶¯ÀàÒ²ºÜ¼òµ¥£¬Ö»ĞèÒªÔÚÀàÂ·¾¶ÏÂ´´½¨META-INF/services/ÎÄ¼ş¼Ğ£¬Í¬Ê±ÔÚÀïÃæ´´½¨java.sql.DriverÎÄ¼ş£¬ÔÚÎÄ¼şÖĞĞ´Èë¾ßÌåµÄÇı¶¯ÀàÃû³Æ£¬µ±È»´ËÀàĞèÒª¼Ì³Ğjava.sql.Driver½Ó¿ÚÀà£»ÀıÈçÊµÀıÖĞÌá¹©µÄTestDriver¡£
+å¦‚æœæƒ³æ‰©å±•æ–°çš„é©±åŠ¨ç±»ä¹Ÿå¾ˆç®€å•ï¼Œåªéœ€è¦åœ¨ç±»è·¯å¾„ä¸‹åˆ›å»ºMETA-INF/services/æ–‡ä»¶å¤¹ï¼ŒåŒæ—¶åœ¨é‡Œé¢åˆ›å»ºjava.sql.Driveræ–‡ä»¶ï¼Œåœ¨æ–‡ä»¶ä¸­å†™å…¥å…·ä½“çš„é©±åŠ¨ç±»åç§°ï¼Œå½“ç„¶æ­¤ç±»éœ€è¦ç»§æ‰¿java.sql.Driveræ¥å£ç±»ï¼›ä¾‹å¦‚å®ä¾‹ä¸­æä¾›çš„TestDriverã€‚
 
-## ĞòÁĞ»¯ÊµÕ½
+## åºåˆ—åŒ–å®æˆ˜
 
-### 1.×¼±¸½Ó¿ÚÀà
+### 1.å‡†å¤‡æ¥å£ç±»
 
 ```
 public interface Serialization {
  
     /**
-     * ĞòÁĞ»¯
+     * åºåˆ—åŒ–
      * 
      * @param obj
      * @return
@@ -293,7 +400,7 @@ public interface Serialization {
     public byte[] serialize(Object obj) throws Exception;
  
     /**
-     * ·´ĞòÁĞ»¯
+     * ååºåˆ—åŒ–
      * 
      * @param param
      * @param clazz
@@ -303,7 +410,7 @@ public interface Serialization {
     public <T> T deserialize(byte[] param, Class<T> clazz) throws Exception;
  
     /**
-     * ĞòÁĞ»¯Ãû³Æ
+     * åºåˆ—åŒ–åç§°
      * 
      * @return
      */
@@ -312,20 +419,20 @@ public interface Serialization {
 }
 ```
 
-### 2.×¼±¸ÊµÏÖÀà
+### 2.å‡†å¤‡å®ç°ç±»
 
-·Ö±ğ×¼±¸JsonSerializationºÍProtobufSerialization
+åˆ†åˆ«å‡†å¤‡JsonSerializationå’ŒProtobufSerialization
 
-### 3.½Ó¿ÚÎÄ¼ş
+### 3.æ¥å£æ–‡ä»¶
 
-ÔÚMETA-INF/services/Ä¿Â¼ÏÂ´´½¨ÎÄ¼şcom.spi.serializer.Serialization£¬ÄÚÈİÈçÏÂ£º
+åœ¨META-INF/services/ç›®å½•ä¸‹åˆ›å»ºæ–‡ä»¶com.spi.serializer.Serializationï¼Œå†…å®¹å¦‚ä¸‹ï¼š
 
 ```
 com.spi.serializer.JsonSerialization
 com.spi.serializer.ProtobufSerialization
 ```
 
-### 4.Ìá¹©ManagerÀà
+### 4.æä¾›Managerç±»
 
 ```
 public class SerializationManager {
@@ -356,13 +463,19 @@ public class SerializationManager {
 }
 ```
 
-Ìá¹©ÀàËÆDriverManagerµÄSerializationManagerÀà£¬ÔÚ¼ÓÔØÀàµÄÊ±ºò¼ÓÔØËùÓĞÅäÖÃµÄĞòÁĞ»¯·½Ê½£»Ìá¹©Ò»¸ögetSerializationµÄ½ñÌì·½·¨ÀàËÆgetConnection£»
+æä¾›ç±»ä¼¼DriverManagerçš„SerializationManagerç±»ï¼Œåœ¨åŠ è½½ç±»çš„æ—¶å€™åŠ è½½æ‰€æœ‰é…ç½®çš„åºåˆ—åŒ–æ–¹å¼ï¼›æä¾›ä¸€ä¸ªgetSerializationçš„ä»Šå¤©æ–¹æ³•ç±»ä¼¼getConnectionï¼›
 
-## ×Ü½á
+## æ€»ç»“
 
-±¾ÎÄÒÔJDBCÇı¶¯ÎªÊµÀı£¬ÖØµã¶ÔÊ¹ÓÃServiceLoader·½Ê½·şÎñ·¢ÏÖ½øĞĞ·ÖÎö£¬Í¬Ê±Ìá¹©ÁËĞòÁĞ»¯µÄ¼òµ¥ÊµÕ½£»dubboÒ²Ìá¹©ÁËÀàËÆµÄSPI·½Ê½£¬ºËĞÄÀàÊÇExtensionLoader£¬±ÈÆğjava¹Ù·½Ìá¹©µÄServiceLoader¹¦ÄÜ¸üÇ¿´ó£¬ºóĞø¼ÌĞø·ÖÎöÒ»ÏÂdubboµÄSPI·½Ê½£¬È»ºó½øĞĞÒ»¸ö¶Ô±È¡£
+æœ¬æ–‡ä»¥JDBCé©±åŠ¨ä¸ºå®ä¾‹ï¼Œé‡ç‚¹å¯¹ä½¿ç”¨ServiceLoaderæ–¹å¼æœåŠ¡å‘ç°è¿›è¡Œåˆ†æï¼ŒåŒæ—¶æä¾›äº†åºåˆ—åŒ–çš„ç®€å•å®æˆ˜ï¼›dubboä¹Ÿæä¾›äº†ç±»ä¼¼çš„SPIæ–¹å¼ï¼Œæ ¸å¿ƒç±»æ˜¯ExtensionLoaderï¼Œæ¯”èµ·javaå®˜æ–¹æä¾›çš„ServiceLoaderåŠŸèƒ½æ›´å¼ºå¤§ï¼Œåç»­ç»§ç»­åˆ†æä¸€ä¸‹dubboçš„SPIæ–¹å¼ï¼Œç„¶åè¿›è¡Œä¸€ä¸ªå¯¹æ¯”ã€‚
 
-## Ê¾Àı´úÂëµØÖ·
+
+
+
+
+## ç¤ºä¾‹ä»£ç åœ°å€
 
 [https://github.com/ksfzhaohui...](https://github.com/ksfzhaohui/blog)  
+
 [https://gitee.com/OutOfMemory...](https://gitee.com/OutOfMemory/blog)
+

@@ -19,13 +19,13 @@ MyBatis框架的核心功能其实不难，无非就是动态代理和jdbc的操
 
 ![Executor](./_offline_resource/Executor执行器实现.png)
 
-基本实现
+- 基本实现
 
-　　　　带有缓存功能的实现
+- 带有缓存功能的实现
 
-　　5.MappedStatement是通过Mapper.xml中定义statement生成的对象。
+5.MappedStatement是通过Mapper.xml中定义statement生成的对象。
 
-　　6.参数输入执行并输出结果集，无需手动判断参数类型和参数下标位置，且自动将结果集映射为Java对象
+6.参数输入执行并输出结果集，无需手动判断参数类型和参数下标位置，且自动将结果集映射为Java对象
 
 - HashMap，KV格式的数据类型
 - Java的基本数据类型
@@ -69,8 +69,52 @@ MyBatis框架的核心功能其实不难，无非就是动态代理和jdbc的操
 
 
 
+## 四、java操作mysql代码
+
+```
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+ 
+import com.mysql.jdbc.Connection;
+ 
+public class test {
+ 
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		String url = "jdbc:mysql://localhost:3306/test_db";
+		String user = "root";
+		String password = "12345678";
+		java.sql.Connection myConnection = DriverManager.getConnection(url,user,password);
+		Statement mystatement = myConnection.createStatement();
+		ResultSet  rs = mystatement.executeQuery("  SELECT f_name,f_price FROM  test_db.fruits");
+		while(rs.next()) {
+			String fn = rs.getString("f_name");
+			String fp = rs.getString("f_price");
+			System.out.println(fn+"  "+fp);
+		}
+		if(mystatement != null) {
+			mystatement.close();
+			mystatement=null;
+		}
+		if(myConnection !=null) {
+			myConnection.close();
+			myConnection=null;
+		}
+	}
+ 
+}
+```
+
+
+
+
+
 
 
 参考文章：
 
 1、https://www.cnblogs.com/xdyixia/p/9420547.html
+
+2、https://blog.csdn.net/qq_41573234/article/details/80618303
