@@ -30,7 +30,7 @@ public class CountDownLatchDemo1 {
         try {
             System.out.println("门卫等待员工上班中...");
             //主线程阻塞等待计数器归零
-            latch.await();
+            latch.await(1, TimeUnit.SECONDS);
             System.out.println("员工都来了,门卫去休息了");
         } catch (InterruptedException e) {
             e.printStackTrace();
